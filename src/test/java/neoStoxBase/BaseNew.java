@@ -14,19 +14,22 @@ public class BaseNew
 	protected static WebDriver driver; 
 	public void launchBrowser() throws IOException 
 	{
+		
+		
 		System.setProperty("webdriver.chrome.driver","E:\\Khushal\\chromedriver_win32\\chromedriver.exe");   
 		driver= new ChromeDriver();  
 		driver.get(UtilityNew.readDataFromPropertyFile("url"));
 		driver.manage().window().maximize(); 
 		Reporter.log("Launching browser",true); 
 		UtilityNew.wait(driver, 2000);  
+		
 		}
 	public static void closingBrowser(WebDriver driver) throws InterruptedException 
 	{
 		Reporter.log("closing browser", true); 
 	
-	  Thread.sleep(5000); 
-	  driver.close();  
+			Thread.sleep(5000); 
+			driver.close();  
 
 }
 }
